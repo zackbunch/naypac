@@ -13,6 +13,9 @@ lint:  ## Lint and static-check
 	black nay
 	flake8 nay
 
+format:
+	isort nay
+
 
 push:  ## Push code with tags
 	git push && git push --tags

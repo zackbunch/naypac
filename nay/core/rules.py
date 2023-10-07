@@ -60,7 +60,7 @@ class Rule:
         exists: Optional[List[str]] = None,
         variables: Optional[Dict[str, str]] = None,
     ) -> None:
-        self._if = if_statement
+        self.if_statement = if_statement
         self._changes = changes
         self._when = when
         self._exists = exists
@@ -130,8 +130,8 @@ class Rule:
             Dict[str, Union[str, bool, List[str], Dict[str, str]]]: A dictionary representing the rule object in GitLab CI.
         """
         rendered_rule: Dict[str, Union[str, bool, List[str], Dict[str, str]]] = {}
-        if self._if:
-            rendered_rule.update({"if": self._if})
+        if self.if_statement:
+            rendered_rule.update({"if": self.if_statement})
 
         if self._changes:
             rendered_rule["changes"] = self._changes

@@ -48,3 +48,6 @@ classDiagram
   GitLabJob --|> TimeDuration
   GitLabJob --|> Cache
   GitLabJob --|> Service
+
+
+  

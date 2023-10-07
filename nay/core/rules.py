@@ -13,16 +13,19 @@ class When(Enum):
     Args:
         Enum (When): statements for Rules
     """
-    ALWAYS = 'always'
-    DELAYED = 'delayed'
-    MANUAL = 'manual'
-    NEVER = 'never'
-    ON_FAILURE = 'on_failure'
-    ON_SUCCESS = 'on_success'
+
+    ALWAYS = "always"
+    DELAYED = "delayed"
+    MANUAL = "manual"
+    NEVER = "never"
+    ON_FAILURE = "on_failure"
+    ON_SUCCESS = "on_success"
+
 
 class Rule:
     """Represents a [rule](https://docs.gitlab.com/ee/ci/yaml/#rules)
 
     Rules are used to include or exclude jobs in Pipelines
     """
+
     pass

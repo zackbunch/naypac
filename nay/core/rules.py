@@ -1,6 +1,6 @@
 from __future__ import annotations
-from copy import deepcopy
 
+from copy import deepcopy
 from enum import Enum
 from typing import Dict, List, Optional, Union
 
@@ -49,6 +49,7 @@ class Rule:
     See Also:
         - GitLab CI/CD [Rules](https://docs.gitlab.com/ee/ci/yaml/#rules) documentation
     """
+
     def __init__(
         self,
         *,
@@ -65,7 +66,7 @@ class Rule:
         self._exists = exists
         self._allow_failure = allow_failure
         self._variables = variables if variables is not None else {}
-    
+
     def never(self) -> Rule:
         """Returns a copy of this rule with the `when` attribute set to `When.NEVER`.
 

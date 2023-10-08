@@ -83,9 +83,5 @@ class PredefinedVariables:
     CHAT_CHANNEL: EnvProxy = EnvProxy("CHAT_CHANNEL")
 
     CI_PIPELINE_ID: EnvProxy = EnvProxy("CI_PIPELINE_ID")
-    """
-    The unique identifier of the current pipeline.
-
-    Raises:
-        KeyError: If environment variable not available.
-    """
+    CI_JOB_NAME: EnvProxy = EnvProxy("CI_JOB_NAME")
+    CI_COMMIT_REF_SLUG: EnvProxy = EnvProxy("CI_COMMIT_REF_SLUG")

@@ -1,27 +1,24 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Dict, List, Union, Optional
 from dataclasses import dataclass
+from typing import Dict, List, Optional, Union
 
 
 @dataclass
 class Image:
-    """This class represents the Nay [Image](https://docs.gitlab.com/ee/ci/yaml/#image) keyword.
+    """Represents the [Image](https://docs.gitlab.com/ee/ci/yaml/#image) keyword.
 
-    Use `Image` to specify a Docker image to use for the `nay.core.job.Job`.
+    Use `Image` to specify a Docker image for the `nay.core.job.Job`.
 
-    Objects of this class are not meant to be altered. Image objects are typically defined
-    centrally and often re-used. Altering the object at one place may lead to unpredictable changes
-    at any reference to that object. That's why this class has no setter methods. However, you can use the
-    `.with_tag()` and `.with_entrypoint()` methods on an Image object, which will return an altered copy
-    of that image. Thus, you can re-use a centrally maintained Image object and modify it for just the
-    place you are using the altered image (copy).
+    Objects of this class are typically defined centrally and re-used to maintain consistency. Avoid altering
+    instances of this class, as it may lead to unpredictable changes in other references. Instead, use the
+    `.with_tag()` and `.with_entrypoint()` methods to create modified copies for specific use cases.
 
     Args:
-        name (str): The fully qualified image name. Could include the repository and tag as usual.
+        name (str): The fully qualified image name, including the repository and tag.
         tag (Optional[str]): Container image tag in the registry to use.
-        entrypoint (Optional[List[str]]): Overwrites the container's entrypoint. Defaults to None.
+        entrypoint (Optional[List[str]]): Overrides the container's entrypoint. Defaults to None.
     """
 
     name: str
